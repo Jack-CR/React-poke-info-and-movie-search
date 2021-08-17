@@ -10,6 +10,8 @@ import MovieSearchPage from '../Pages/MovieSearchPage';
 import PokeinfoPage from '../Pages/PokeinfoPage';
 import PokemonsPage from '../Pages/PokemonsPage';
 import ClockJs from '../Components/Clock/ClockJs'
+import  './Style.css'
+import Page404 from '../Pages/Page404';
 
 export const NavBar = () => {
     return (
@@ -23,8 +25,8 @@ export const NavBar = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="#action1"><Link to="/">Pokemons List</Link></Nav.Link>
-                        <Nav.Link href="#action2"><Link to="/Movie-search">Movies Search</Link></Nav.Link>
+                        <Nav.Link  ><Link to="/" className="linkPages">Pokemons List</Link></Nav.Link>
+                        <Nav.Link ><Link to="/Movie-search" className="linkPages">Movies Search</Link></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -38,6 +40,9 @@ export const NavBar = () => {
                 </Route>
                 <Route exact path="/">
                     <PokemonsPage/>
+                </Route>
+                <Route>
+                    <Page404/>
                 </Route>
             </Switch>
         </Router>

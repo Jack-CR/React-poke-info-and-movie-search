@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { FormControl, Container, Row, Col, Button,Form } from 'react-bootstrap'
+import { FormControl, Container, Row, Col, Button, Form } from 'react-bootstrap'
 import axios from 'axios'
 import CardMovieComponent from '../Components/Card/CardMovieComponent';
+import LoadingComponent from '../Components/Loading/LoadingComponent';
 
 export const MovieSearchPage = () => {
     const [movies, setMovies] = useState([]);
@@ -9,13 +10,13 @@ export const MovieSearchPage = () => {
 
     useEffect(() => {
         axios.get(`https://api.tvmaze.com/search/shows?q=${movieName}`)
-        .then((res)=>{
-            return res.data;
-        })
-        .then((json)=>{
-            setMovies(json);
-        })
-       
+            .then((res) => {
+                return res.data;
+            })
+            .then((json) => {
+                setMovies(json);
+            })
+
     }, [movieName])
 
     return (
@@ -29,22 +30,26 @@ export const MovieSearchPage = () => {
                                 placeholder="Search"
                                 className="mr-2"
                                 aria-label="Search"
-                                onChange={(e)=>setmovieName(e.target.value)}
+                                onChange={(e) => setmovieName(e.target.value)}
                             />
                             <Button variant="outline-success">Search</Button>
                         </Form>
                     </Col>
                 </Row>
                 <Row>
-                   {
-                       movies.map((el,key)=>{
-                           return(
-                               <Col key={key}>
-                                  <CardMovieComponent movie={el}/>
-                               </Col>
-                           )
-                       })
-                   }
+                    {movies.length === 0 ? (
+                        <Col className="mt-3">
+                            <LoadingComponent />
+                        </Col>
+                    ) : (
+                        movies.map((el, key) => {
+                            return (
+                                <Col key={key}>
+                                    <CardMovieComponent movie={el} />
+                                </Col>
+                            )
+                        })
+                    )}
                 </Row>
             </Container>
 
