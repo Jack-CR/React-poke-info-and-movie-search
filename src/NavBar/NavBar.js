@@ -6,6 +6,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import MovieSearchPage from '../Pages/MovieSearchPage';
 import PokeinfoPage from '../Pages/PokeinfoPage';
 import PokemonsPage from '../Pages/PokemonsPage';
 
@@ -13,7 +14,7 @@ export const NavBar = () => {
     return (
         <Router>
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+                <Navbar.Brand href="#">Info Page</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -22,12 +23,15 @@ export const NavBar = () => {
                         navbarScroll
                     >
                         <Nav.Link href="#action1"><Link to="/">Pokemons List</Link></Nav.Link>
-                        <Nav.Link href="#action2">Movies Search</Nav.Link>
+                        <Nav.Link href="#action2"><Link to="/Movie-search">Movies Search</Link></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
 
             <Switch>
+                <Route exact path="/Movie-search">
+                    <MovieSearchPage/>
+                </Route>
                 <Route path="/pokemon/:id">
                     <PokeinfoPage/>
                 </Route>
