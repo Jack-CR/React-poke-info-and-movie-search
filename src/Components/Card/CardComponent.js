@@ -10,7 +10,7 @@ export const CardComponent = ({pokemon}) => {
           <Card.Text>
            
           </Card.Text>
-          <Button variant="primary" href={`/pokemon/${pokemon.id}`}>{pokemon.name} Info</Button>
+         <h1>info poke</h1>
         </Card.Body>
       </Card>
     )

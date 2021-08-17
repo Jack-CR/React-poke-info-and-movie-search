@@ -7,7 +7,6 @@ import {
     Link
 } from "react-router-dom";
 import MovieSearchPage from '../Pages/MovieSearchPage';
-import PokeinfoPage from '../Pages/PokeinfoPage';
 import PokemonsPage from '../Pages/PokemonsPage';
 import ClockJs from '../Components/Clock/ClockJs'
 import  './Style.css'
@@ -34,9 +33,6 @@ export const NavBar = () => {
             <Switch>
                 <Route exact path="/Movie-search">
                     <MovieSearchPage/>
-                </Route>
-                <Route path="/pokemon/:id">
-                    <PokeinfoPage/>
                 </Route>
                 <Route exact path="/">
                     <PokemonsPage/>

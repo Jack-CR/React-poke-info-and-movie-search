@@ -42,7 +42,9 @@ export const PokemonsPage = () => {
             </Row>
             <Row>
                 {pokemons.length===0
-                    ?<LoadingComponent/>
+                    ?<Col>
+                        <LoadingComponent/>
+                    </Col>
                     :pokemons.map((el, key) => {
                         return (
                             <Col key={key}>
