@@ -6,6 +6,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import PokeinfoPage from '../Pages/PokeinfoPage';
 import PokemonsPage from '../Pages/PokemonsPage';
 
 export const NavBar = () => {
@@ -27,6 +28,9 @@ export const NavBar = () => {
             </Navbar>
 
             <Switch>
+                <Route path="/pokemon/:id">
+                    <PokeinfoPage/>
+                </Route>
                 <Route exact path="/">
                     <PokemonsPage/>
                 </Route>
