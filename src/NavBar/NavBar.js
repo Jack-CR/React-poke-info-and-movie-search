@@ -9,12 +9,13 @@ import {
 import MovieSearchPage from '../Pages/MovieSearchPage';
 import PokeinfoPage from '../Pages/PokeinfoPage';
 import PokemonsPage from '../Pages/PokemonsPage';
+import ClockJs from '../Components/Clock/ClockJs'
 
 export const NavBar = () => {
     return (
         <Router>
-            <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="#">Info Page</Navbar.Brand>
+            <Navbar bg="light">
+               <ClockJs/>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
